@@ -870,45 +870,41 @@
 
         <!-- Achievement Section -->
         <div id="achievement" class="content-section">
-            <div class="card">
-                <h2 style="color: #ff1493; text-align: center; font-size: 2.5em; font-weight: 800;">🏆 Pencapaian & Leaderboard</h2>
-                <p style="text-align: center; color: #666; font-size: 1.2em;">Raih semua badge dan jadilah yang terbaik! 🌟</p>
+  <h2 style="color: #ff1403; text-align: center; font-size: 2.5em; font-weight: 800;">Pencapaian & Leaderboards</h2>
+  <p style="text-align: center; color: #654; font-size: 1.2em;">Dapatkan badge dan jadilah yang terbaik!</p>
+  
+  <div style="margin-top: 30px;">
+    <h3 style="color: #ff1403; font-size: 3em; margin-bottom: 20px;">Badge Pencapaian</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px;" id="badgeCont"></div>
+  </div>
 
-                <div style="margin-top: 30px;">
-                    <h3 style="color: #ff1493; font-size: 2em; margin-bottom: 20px;">🎖️ Badge Pencapaian</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;" id="badgeContainer">
-                    </div>
-                </div>
-
-                <div style="margin-top: 40px;">
-                    <h3 style="color: #ff1493; font-size: 2em; margin-bottom: 20px;">📊 Statistik Belajar</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                        <div style="background: linear-gradient(135deg, #ff69b4 0%, #ff85c1 100%); padding: 25px; border-radius: 20px; text-align: center; color: white; border: 4px solid #ff1493;">
-                            <div style="font-size: 3em;">📚</div>
-                            <div style="font-size: 2em; font-weight: 800; margin: 10px 0;" id="totalWords">0</div>
-                            <div style="font-size: 1.1em;">Kata Dipelajari</div>
-                        </div>
-                        <div style="background: linear-gradient(135deg, #ff69b4 0%, #ff85c1 100%); padding: 25px; border-radius: 20px; text-align: center; color: white; border: 4px solid #ff1493;">
-                            <div style="font-size: 3em;">🎯</div>
-                            <div style="font-size: 2em; font-weight: 800; margin: 10px 0;" id="quizzesTaken">0</div>
-                            <div style="font-size: 1.1em;">Kuis Selesai</div>
-                        </div>
-                        <div style="background: linear-gradient(135deg, #ff69b4 0%, #ff85c1 100%); padding: 25px; border-radius: 20px; text-align: center; color: white; border: 4px solid #ff1493;">
-                            <div style="font-size: 3em;">⭐</div>
-                            <div style="font-size: 2em; font-weight: 800; margin: 10px 0;" id="totalScore">0</div>
-                            <div style="font-size: 1.1em;">Total Poin</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-top: 40px;">
-                    <h3 style="color: #ff1493; font-size: 2em; margin-bottom: 20px;">🥇 Top Learners</h3>
-                    <div id="leaderboardList"></div>
-                </div>
-            </div>
-        </div>
+  <div style="margin-top: 40px;">
+    <h3 style="color: #ff1403; font-size: 2em; margin-bottom: 20px;">Statistik Belajar</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+      <div style="background: linear-gradient(150deg, #ff60b5, #ff85C1 100%); padding: 25px; border-radius: 20px;">
+        <div style="font-size: 3em;">📚</div>
+        <div style="font-size: 2em; font-weight: 800; margin: 10px 0;" id="totalKata">0</div>
+        <div style="font-size: 1.1em;">Kata Dipelajari</div>
+      </div>
+      <div style="background: linear-gradient(150deg, #ff60b5, #ff85C1 100%); padding: 25px; border-radius: 20px;">
+        <div style="font-size: 3em;">✅</div>
+        <div style="font-size: 2em; font-weight: 800; margin: 10px 0;" id="quizTerselesaikan">0</div>
+        <div style="font-size: 1.1em;">Quiz Selesai</div>
+      </div>
+      <div style="background: linear-gradient(150deg, #ff60b5, #ff85C1 100%); padding: 25px; border-radius: 20px;">
+        <div style="font-size: 3em;">🏆</div>
+        <div style="font-size: 2em; font-weight: 800; margin: 10px 0;" id="totalScore">0</div>
+        <div style="font-size: 1.1em;">Total Point</div>
+      </div>
     </div>
+  </div>
 
+  <!-- Bagian "Top Learners" telah dihapus di sini -->
+
+        </div>
+        
+
+        
     <script>
         const vocabularyData = {
             salam: [
