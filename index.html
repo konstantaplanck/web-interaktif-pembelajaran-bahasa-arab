@@ -1657,35 +1657,12 @@
             setTimeout(() => notif.remove(), 4000);
         }
 
-        function renderLeaderboard() {
-            const container = document.getElementById('leaderboardList');
-            const leaders = [
-                { name: 'Aisyah 🌸', score: 1250, emoji: '🥇' },
-                { name: 'Fatimah 💕', score: 1100, emoji: '🥈' },
-                { name: 'Khadijah ✨', score: 980, emoji: '🥉' },
-                { name: 'Kamu 💖', score: userStats.totalScore, emoji: '🌟' },
-                { name: 'Zainab 🦋', score: 750, emoji: '⭐' }
-            ];
-            
-            leaders.sort((a, b) => b.score - a.score);
-            
-            container.innerHTML = leaders.map((leader, index) => `
-                <div class="leaderboard-card" style="background: ${index < 3 ? 'linear-gradient(135deg, #ffd700 0%, #ffed4e 100%)' : 'linear-gradient(135deg, #ff69b4 0%, #ff85c1 100%)'}; border-color: ${index < 3 ? '#ffa500' : '#ff1493'};">
-                    <div style="font-size: 3em;">${index < 3 ? leader.emoji : '🌟'}</div>
-                    <div style="flex: 1;">
-                        <div style="font-size: 1.4em; font-weight: 700; color: ${index < 3 ? '#ff6600' : 'white'};">${leader.name}</div>
-                        <div style="font-size: 1.1em; color: ${index < 3 ? '#ff6600' : 'white'}; opacity: 0.9;">${leader.score} poin</div>
-                    </div>
-                    <div style="font-size: 2em; font-weight: 800; color: ${index < 3 ? '#ff6600' : 'white'};">#${index + 1}</div>
-                </div>
-            `).join('');
-        }
+        
 
         // Initialize
         renderVocabulary();
         renderFavorites();
         renderBadges();
-        renderLeaderboard();
         updateStats();
 
         // Create sparkles periodically
