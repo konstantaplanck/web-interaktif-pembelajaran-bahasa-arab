@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Belajar Bahasa Arab Yuk! 🌸</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Nunito:wght@400;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8e5f0 25%, #fce8f3 50%, #fef0f7 75%, #fff5f9 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(248, 187, 208, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(244, 194, 213, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(252, 228, 236, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .sparkle {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkleAnim 3s infinite;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.5;
+        }
+
+        @keyframes sparkleAnim {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 0.5; transform: scale(1); }
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(8deg); }
+        }
+
+        @keyframes bounceSlow {
+            0%, 100% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.08) translateY(-8px); }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-8deg); }
+            75% { transform: rotate(8deg); }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 20, 147, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 20, 147, 0.8); }
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, #f8bbd0 0%, #f5c9d6 50%, #f3d5e0 100%);
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(248, 187, 208, 0.25);
+            margin-bottom: 40px;
+            animation: slideInLeft 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .header h1 {
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-size: 3.5em;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+            animation: bounceSlow 4s ease-in-out infinite;
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emoji-large {
+            font-size: 4em;
+            display: inline-block;
+            animation: floatSlow 6s ease-in-out infinite;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .tab-btn {
+            padding: 18px 35px;
+            background: linear-gradient(135deg, #f8bbd0 0%, #f5c9d6 100%);
+            border: 3px solid #f3b6c8;
+            border-radius: 30px;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 8px 25px rgba(248, 187, 208, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .tab-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 15px 40px rgba(248, 187, 208, 0.3);
+            animation: wiggle 0.6s;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #f5a3be 0%, #f3b6c8 100%);
+            border-color: #f09cb7;
+            animation: pulseGlow 2s infinite;
+            transform: scale(1.1);
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #ffffff 0%, #fffbfc 100%);
+            border-radius: 35px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 45px rgba(248, 187, 208, 0.15);
+            transition: all 0.4s;
+            border: 4px solid #fce8f3;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::after {
+            content: '✨';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2.5em;
+            opacity: 0.12;
+            animation: floatSlow 5s ease-in-out infinite;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(248, 187, 208, 0.25);
+            border-color: #f8e5f0;
+        }
+
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .vocab-card {
+            background: linear-gradient(135deg, #f8bbd0 0%, #f5c9d6 50%, #f3d5e0 100%);
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 4px solid #f3b6c8;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vocab-card::before {
+            content: '💫';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2em;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .vocab-card:hover::before {
+            opacity: 1;
+            animation: floatSlow 2s ease-in-out infinite;
+        }
+
+        .vocab-card:hover {
+            transform: scale(1.12) rotate(-3deg);
+            border-color: #f09cb7;
+            box-shadow: 0 20px 50px rgba(248, 187, 208, 0.3);
+            animation: wiggle 0.8s;
+        }
+
+        .vocab-emoji {
+            font-size: 3.8em;
+            display: block;
+            margin-bottom: 20px;
+            animation: bounceSlow 6s ease-in-out infinite;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.12));
+        }
+
+        .vocab-arabic {
+            font-size: 2.5em;
+            color: #ffffff;
+            font-weight: 800;
+            margin: 15px 0;
+            direction: rtl;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+        }
+
+        .vocab-indo {
+            font-size: 1.4em;
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .vocab-latin {
+            font-size: 1em;
+            color: #ffe0f0;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #f8bbd0 0%, #f5c9d6 100%);
+            color: white;
+            border: 3px solid #f3b6c8;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 8px 25px rgba(248, 187, 208, 0.2);
+            margin: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '✨';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .btn:hover::after {
+            opacity: 1;
+            right: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0 15px 40px rgba(248, 187, 208, 0.3);
+            animation: wiggle 0.5s;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .input-group {
+            margin: 25px 0;
+        }
+
+        .input-group label {
+            display: block;
+            color: #f8bbd0;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.03);
+        }
+
+        .achievement-badge {
+            background: linear-gradient(135deg, #f8bbd0 0%, #f5c9d6 100%);
+            padding: 15px;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid #f3b6c8;
+            margin: 10px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .input-group input, .input-group textarea, .input-group select {
+            width: 100%;
+            padding: 18px;
+            border: 4px solid #fce8f3;
+            border-radius: 20px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #fffdfe 100%);
+        }
+
+        .input-group input:focus, .input-group textarea:focus, .input-group select:focus {
+            outline: none;
+            border-color: #f8bbd0;
+            box-shadow: 0 0 25px rgba(248, 187, 208, 0.2);
+            transform: scale(1.02);
+        }
+
+        .quiz-option {
+            background: linear-gradient(135deg, #f8bbd0 0%, #f5c9d6 100%);
+            padding: 25px;
+            margin: 15px 0;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.4s;
+            border: 4px solid #f3b6c8;
+            font-size: 1.3em;
+            color: white;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .quiz-option:hover::before {
+            left: 100%;
+        }
+
+        .quiz-option:hover {
+            background: linear-gradient(135deg, #f5c9d6 0%, #f3d5e0 100%);
+            transform: translateX(15px) scale(1.03);
+            border-color: #f09cb7;
+            box-shadow: 0 10px 30px rgba(248, 187, 208, 0.25);
+        }
+
+        .quiz-option.correct {
+            background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+            border-color: #00ff88;
+            animation: bounceSlow 1s;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.6);
+        }
+
+        .quiz-option.wrong {
+            background: linear-gradient(135deg, #ff3366 0%, #ff0044 100%);
+            border-color: #ff3366;
+            animation: wiggle 0.8s;
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.6);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(135deg, #fef0f7 0%, #fff5f9 100%);
+            border-radius: 25px;
+            overflow: hidden;
+            margin: 25px 0;
+            border: 4px solid #fce8f3;
+            box-shadow: inset 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f8bbd0 0%, #f5c9d6 50%, #f3d5e0 100%);
+            transition: width 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+        }
+
+        .score-display {
+            text-align: center;
+            font-size: 2.5em;
+            color: #f8bbd0;
+            font-weight: 800;
+            margin: 25px 0;
+            animation: pulseGlow 3s infinite;
+            text-shadow: 3px 3px 6px rgba(248, 187, 208, 0.2);
+        }
+
+        .recording-indicator {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: #ff3366;
+            border-radius: 50%;
+            animation: pulseGlow 1s infinite;
+            margin-left: 15px;
+            box-shadow: 0 0 20px #ff3366;
+        }
+
+        .conversation-box {
+            background: linear-gradient(135deg, #fffbfc 0%, #fffdfe 100%);
+            padding: 30px;
+            border-radius: 25px;
+            margin: 25px 0;
+            max-height: 500px;
+            overflow-y: auto;
+            border: 4px solid #fce8f3;
+            box-shadow: inset 0 5px 15px rgba(248, 187, 208, 0.05);
+        }
+
+        .message {
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 20px;
+            animation: slideInLeft 0.5s;
+            border: 3px solid;
+            transition: all 0.3s;
+        }
+
+        .message:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .message.user {
+            background: linear-gradient(135deg, #f8bbd0 0%, #f5c9d6 100%);
+            color: white;
+            margin-left: 20%;
+            text-align: right;
+            border-color: #f3b6c8;
+            animation: slideInRight 0.5s;
+        }
+
+        .message.assistant {
+            background: white;
+            color: #333;
+            margin-right: 20%;
+            border-color: #fce8f3;
+        }
+
+        .floating-emoji {
+            position: fixed;
+            font-size: 2.5em;
+            animation: floatSlow 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1000;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+            opacity: 0.4;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #f8bbd0 0%, #f5c9d6 100%);
+            color: white;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 700;
+            margin: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 3px solid #f3b6c8;
+            box-shadow: 0 5px 15px rgba(248, 187, 208, 0.2);
+        }
+
+        .category-badge:hover {
+            transform: scale(1.15) rotate(-3deg);
+            box-shadow: 0 8px 25px rgba(248, 187, 208, 0.3);
+            animation: wiggle 0.5s;
+        }
+
+        .category-badge.active {
+            background: linear-gradient(135deg, #f5a3be 0%, #f3b6c8 100%);
+            animation: pulseGlow 2s infinite;
+        }
+
+        .leaderboard-card {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 20px;
+            border: 4px solid #ffa500;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s;
+            animation: slideInLeft 0.5s;
+        }
+
+        .leaderboard-card:hover {
+            transform: translateX(10px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+        }
+
+        .achievement-badge {
+            background: linear-gradient(135deg, #ff69b4 0%, #ff85c1 100%);
+            padding: 15px;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid #ff1493;
+            margin: 10px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .achievement-badge:hover {
+            transform: scale(1.15) rotate(5deg);
+            animation: wiggle 0.5s;
+        }
+
+        .game-card {
+            background: linear-gradient(135deg, #f8bbd0 0%, #f5c9d6 100%);
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s;
+            border: 4px solid #f3b6c8;
+            margin: 15px;
+        }
+
+        .game-card:hover {
+            transform: scale(1.08) translateY(-10px);
+            box-shadow: 0 15px 40px rgba(248, 187, 208, 0.3);
+            animation: bounceSlow 1s;
+        }
+
+        .daily-challenge {
+            background: linear-gradient(135deg, #f8bbd0 0%, #f5c9d6 100%);
+            padding: 30px;
+            border-radius: 30px;
+            color: white;
+            text-align: center;
+            margin: 20px 0;
+            border: 4px solid #fce8f3;
+            animation: pulseGlow 3s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(248, 187, 208, 0.25); }
+            50% { box-shadow: 0 0 40px rgba(248, 187, 208, 0.4); }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5em; }
+            .emoji-large { font-size: 4em; }
+            .vocabulary-grid { grid-template-columns: 1fr; }
+            .nav-tabs { flex-direction: column; }
+        }
+
+        .sound-wave {
+            display: inline-flex;
+            gap: 3px;
+            margin-left: 10px;
+        }
+
+        .sound-wave span {
+            display: inline-block;
+            width: 3px;
+            height: 15px;
+            background: white;
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        .sound-wave span:nth-child(2) { animation-delay: 0.1s; }
+        .sound-wave span:nth-child(3) { animation-delay: 0.2s; }
+        .sound-wave span:nth-child(4) { animation-delay: 0.3s; }
+
+        @keyframes wave {
+            0%, 100% { height: 15px; }
+            50% { height: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sparkles -->
+    <div class="sparkle" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="top: 25%; right: 20%; animation-delay: 0.8s;"></div>
+    <div class="sparkle" style="bottom: 30%; left: 25%; animation-delay: 1.6s;"></div>
+    <div class="sparkle" style="bottom: 15%; right: 15%; animation-delay: 2.4s;"></div>
+
+    <div class="floating-emoji" style="top: 8%; left: 3%; animation-delay: 0s;">🦋</div>
+    <div class="floating-emoji" style="top: 15%; right: 8%; animation-delay: 2s;">🌸</div>
+    <div class="floating-emoji" style="top: 55%; left: 5%; animation-delay: 4s;">💫</div>
+    <div class="floating-emoji" style="top: 65%; right: 3%; animation-delay: 6s;">✨</div>
+    <div class="floating-emoji" style="bottom: 10%; left: 10%; animation-delay: 3s;">🌺</div>
+    <div class="floating-emoji" style="bottom: 20%; right: 12%; animation-delay: 5s;">🦋</div>
+
+    <audio id="clickSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBTGH0fPTgjMGHm7A7+OZQQ0PVqzn77BdGAg+ltryxnMpBSh+zPLaizsIGGS55+OcTQ0OUKXh8bllHAU2jdXyzn0vBSh+zPPaizsIG2W55+OcTQ0PUKXh8bllHAU2jdXyzn0vBSl+zPPaizsIG2a55+OcTQ0PUKXh8bllHAU2jdXyzn0vBSl+zPPaizsIG2a55+OcTQ0PUKXh8bllHAU2jdXyzn0vBSl+zPPaizsIG2a55+OcTQ0PUKXh8bllHAU2jdXyzn0vBSl+zPPaizsIG2a55+OcTQ0PUKXh8bllHAU2jdXyzn0vBQ==" type="audio/wav">
+    </audio>
+    <audio id="successSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRigBAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YfQAAACxs7a6vsLGytDU2Nzg5Ojr7vD09/r9/gD+/fv5+Pb08e7r6eXi3tvZ1tPQzMnFwb68uLWysK6sqaakop+cm5mWk5KPjYuIh4SBgH9+fXx7eXh3dnRzcnFwb21ubGtpZ2ZlZGJhX19dXFtaWVhWVVNSUE9NTEtJR0ZGRET/" type="audio/wav">
+    </audio>
+
+    <div class="container">
+        <div class="header">
+            <span class="emoji-large">🕌</span>
+            <h1>Belajar Bahasa Arab Yuk! 🌸</h1>
+            <span class="emoji-large">📖</span>
+            <p style="color: white; font-size: 1.3em; margin-top: 20px; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+                Aplikasi Interaktif Pembelajaran Bahasa Arab untuk Kehidupan Sehari-hari 💖✨
+            </p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="showTab('kosakata')">🗣️ Kosakata</button>
+            <button class="tab-btn" onclick="showTab('percakapan')">💬 Percakapan</button>
+            <button class="tab-btn" onclick="showTab('latihan')">📝 Latihan Ucapan</button>
+            <button class="tab-btn" onclick="showTab('kuis')">🎯 Kuis</button>
+            <button class="tab-btn" onclick="showTab('translator')">🔄 Translator</button>
+            <button class="tab-btn" onclick="showTab('games')">🎮 Mini Games</button>
+            <button class="tab-btn" onclick="showTab('achievement')">🏆 Pencapaian</button>
+        </div>
+
+        <!-- Kosakata Section -->
+        <div id="kosakata" class="content-section active">
+            <div class="card">
+                <h2 style="color: #ff1493; text-align: center; font-size: 2.5em; font-weight: 800;">📚 Kosakata Sehari-hari</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 25px; font-size: 1.2em;">Klik kartu untuk mendengar pengucapan! 🔊</p>
+                
+                <div style="text-align: center; margin: 25px 0;">
+                    <span class="category-badge active" onclick="filterCategory('all')">🌟 Semua</span>
+                    <span class="category-badge" onclick="filterCategory('salam')">👋 Salam</span>
+                    <span class="category-badge" onclick="filterCategory('keluarga')">👨‍👩‍👧‍👦 Keluarga</span>
+                    <span class="category-badge" onclick="filterCategory('makanan')">🍽️ Makanan</span>
+                    <span class="category-badge" onclick="filterCategory('aktivitas')">⚽ Aktivitas</span>
+                    <span class="category-badge" onclick="filterCategory('angka')">🔢 Angka</span>
+                    <span class="category-badge" onclick="filterCategory('warna')">🎨 Warna</span>
+                </div>
+
+                <div class="vocabulary-grid" id="vocabGrid"></div>
+            </div>
+        </div>
+
+        <!-- Percakapan Section -->
+        <div id="percakapan" class="content-section">
+            <div class="card">
+                <h2 style="color: #ff1493; text-align: center; font-size: 2.5em; font-weight: 800;">💬 Latihan Percakapan</h2>
+                <p style="text-align: center; color: #666; font-size: 1.2em;">Pilih situasi percakapan dan praktikkan! 🎭</p>
+                
+                <div style="text-align: center; margin: 35px 0;">
+                    <button class="btn" onclick="loadConversation('pasar')">🛒 Di Pasar</button>
+                    <button class="btn" onclick="loadConversation('restoran')">🍽️ Di Restoran</button>
+                    <button class="btn" onclick="loadConversation('perkenalan')">👋 Perkenalan</button>
+                    <button class="btn" onclick="loadConversation('rumah')">🏠 Di Rumah</button>
+                    <button class="btn" onclick="loadConversation('sekolah')">🏫 Di Sekolah</button>
+                </div>
+
+                <div class="conversation-box" id="conversationBox">
+                    <p style="text-align: center; color: #999; font-size: 1.3em;">Pilih situasi percakapan di atas! 💕</p>
+                </div>
+
+                <div style="text-align: center; margin-top: 25px;">
+                    <button class="btn" onclick="speakConversation()">🔊 Putar Semua</button>
+                    <button class="btn" onclick="clearConversation()">🗑️ Hapus</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latihan Ucapan Section -->
+        <div id="latihan" class="content-section">
+            <div class="card">
+                <h2 style="color: #ff1493; text-align: center; font-size: 2.5em; font-weight: 800;">🎤 Latihan Pengucapan</h2>
+                <p style="text-align: center; color: #666; font-size: 1.2em;">Latih pengucapan bahasa Arabmu! 🌟</p>
+
+                <div class="input-group">
+                    <label>📝 Pilih Kalimat untuk Dilatih:</label>
+                    <select id="practiceSelect" style="width: 100%; padding: 18px; border: 4px solid #ff69b4; border-radius: 20px; font-size: 1.1em; font-weight: 600;">
+                        <option value="السلام عليكم">السلام عليكم (Assalamu'alaikum - Salam)</option>
+                        <option value="كيف حالك">كيف حالك (Kaifa haluka - Apa kabar?)</option>
+                        <option value="شكرا جزيلا">شكرا جزيلا (Syukran jazilan - Terima kasih banyak)</option>
+                        <option value="أنا بخير">أنا بخير (Ana bikhair - Saya baik-baik saja)</option>
+                        <option value="ما اسمك">ما اسمك (Ma ismuka - Siapa namamu?)</option>
+                        <option value="أنا من إندونيسيا">أنا من إندونيسيا (Ana min Indonesia - Saya dari Indonesia)</option>
+                        <option value="أحبك">أحبك (Uhibbuka - Saya cinta kamu)</option>
+                    </select>
+                </div>
+
+                <div style="text-align: center; margin: 35px 0;">
+                    <button class="btn" onclick="speakSelectedText()">🔊 Dengarkan Pengucapan</button>
+                    <button class="btn" onclick="startRecording()" id="recordBtn">🎤 Mulai Rekam</button>
+                </div>
+
+                <div id="recordingResult" style="margin-top: 25px;"></div>
+                
+                <div class="daily-challenge">
+                    <h3 style="font-size: 2em; margin-bottom: 15px;">⭐ Tantangan Harian ⭐</h3>
+                    <p style="font-size: 1.3em;" id="dailyChallenge">Ucapkan 5 kosakata dengan sempurna hari ini!</p>
+                    <div style="margin-top: 20px; font-size: 3em;" id="challengeProgress">0/5 ✨</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kuis Section -->
+        <div id="kuis" class="content-section">
+            <div class="card">
+                <h2 style="color: #ff1493; text-align: center; font-size: 2.5em; font-weight: 800;">🎯 Kuis Interaktif</h2>
+                <p style="text-align: center; color: #666; font-size: 1.2em;">Uji pemahamanmu! 💪</p>
+
+                <div class="score-display">
+                    <span class="emoji-large">🏆</span>
+                    <div>Skor: <span id="score">0</span> / <span id="totalQuestions">0</span></div>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar" style="width: 0%;">0%</div>
+                </div>
+
+                <div id="quizContent"></div>
+
+                <div style="text-align: center; margin-top: 35px;">
+                    <button class="btn" onclick="startQuiz()">🎮 Mulai Kuis Baru</button>
+                    <button class="btn" onclick="startQuiz('hard')">🔥 Mode Sulit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Translator Section -->
+        <div id="translator" class="content-section">
+            <div class="card">
+                <h2 style="color: #ff1493; text-align: center; font-size: 2.5em; font-weight: 800;">🔄 Translator Mini</h2>
+                <p style="text-align: center; color: #666; font-size: 1.2em;">Terjemahkan kata dan frasa sederhana! ✨</p>
+
+                <div class="input-group">
+                    <label>📝 Masukkan Kata/Frasa (Indonesia):</label>
+                    <input type="text" id="translateInput" placeholder="Contoh: selamat pagi, terima kasih...">
+                </div>
+
+                <div style="text-align: center; margin: 25px 0;">
+                    <button class="btn" onclick="translateText()">🔄 Terjemahkan</button>
+                    <button class="btn" onclick="speakTranslation()">🔊 Dengarkan</button>
+                    <button class="btn" onclick="saveToFavorite()">⭐ Simpan Favorit</button>
+                </div>
+
+                <div id="translationResult"></div>
+
+                <div style="margin-top: 30px;">
+                    <h3 style="color: #ff1493; font-size: 1.8em; margin-bottom: 15px;">💖 Frasa Favorit</h3>
+                    <div id="favoriteList" style="display: grid; gap: 10px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mini Games Section -->
+        <div id="games" class="content-section">
+            <div class="card">
+                <h2 style="color: #ff1493; text-align: center; font-size: 2.5em; font-weight: 800;">🎮 Mini Games</h2>
+                <p style="text-align: center; color: #666; font-size: 1.2em;">Belajar sambil bermain! 🌟</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
+                    <div class="game-card" onclick="startGame('memory')">
+                        <div style="font-size: 4em; margin-bottom: 15px;">🧠</div>
+                        <h3 style="color: white; font-size: 1.5em; margin-bottom: 10px;">Memory Match</h3>
+                        <p style="color: white; opacity: 0.9;">Cocokkan kartu Arab-Indonesia!</p>
+                    </div>
+
+                    <div class="game-card" onclick="startGame('typing')">
+                        <div style="font-size: 4em; margin-bottom: 15px;">⌨️</div>
+                        <h3 style="color: white; font-size: 1.5em; margin-bottom: 10px;">Speed Typing</h3>
+                        <p style="color: white; opacity: 0.9;">Ketik huruf Arab dengan cepat!</p>
+                    </div>
+
+                    <div class="game-card" onclick="startGame('hangman')">
+                        <div style="font-size: 4em; margin-bottom: 15px;">🎯</div>
+                        <h3 style="color: white; font-size: 1.5em; margin-bottom: 10px;">Tebak Kata</h3>
+                        <p style="color: white; opacity: 0.9;">Tebak kata Arab yang tersembunyi!</p>
+                    </div>
+
+                    <div class="game-card" onclick="startGame('listening')">
+                        <div style="font-size: 4em; margin-bottom: 15px;">👂</div>
+                        <h3 style="color: white; font-size: 1.5em; margin-bottom: 10px;">Listening Game</h3>
+                        <p style="color: white; opacity: 0.9;">Dengar dan pilih jawaban!</p>
+                    </div>
+                </div>
+
+                <div id="gameArea" style="margin-top: 30px;"></div>
+            </div>
+        </div>
+
+        <!-- Achievement Section -->
+        <div id="achievement" class="content-section">
+            <div class="card">
+                <h2 style="color: #ff1493; text-align: center; font-size: 2.5em; font-weight: 800;">🏆 Pencapaian & Leaderboard</h2>
+                <p style="text-align: center; color: #666; font-size: 1.2em;">Raih semua badge dan jadilah yang terbaik! 🌟</p>
+
+                <div style="margin-top: 30px;">
+                    <h3 style="color: #ff1493; font-size: 2em; margin-bottom: 20px;">🎖️ Badge Pencapaian</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;" id="badgeContainer">
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #ff1493; font-size: 2em; margin-bottom: 20px;">📊 Statistik Belajar</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div style="background: linear-gradient(135deg, #ff69b4 0%, #ff85c1 100%); padding: 25px; border-radius: 20px; text-align: center; color: white; border: 4px solid #ff1493;">
+                            <div style="font-size: 3em;">📚</div>
+                            <div style="font-size: 2em; font-weight: 800; margin: 10px 0;" id="totalWords">0</div>
+                            <div style="font-size: 1.1em;">Kata Dipelajari</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #ff69b4 0%, #ff85c1 100%); padding: 25px; border-radius: 20px; text-align: center; color: white; border: 4px solid #ff1493;">
+                            <div style="font-size: 3em;">🎯</div>
+                            <div style="font-size: 2em; font-weight: 800; margin: 10px 0;" id="quizzesTaken">0</div>
+                            <div style="font-size: 1.1em;">Kuis Selesai</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #ff69b4 0%, #ff85c1 100%); padding: 25px; border-radius: 20px; text-align: center; color: white; border: 4px solid #ff1493;">
+                            <div style="font-size: 3em;">⭐</div>
+                            <div style="font-size: 2em; font-weight: 800; margin: 10px 0;" id="totalScore">0</div>
+                            <div style="font-size: 1.1em;">Total Poin</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: #ff1493; font-size: 2em; margin-bottom: 20px;">🥇 Top Learners</h3>
+                    <div id="leaderboardList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const vocabularyData = {
+            salam: [
+                { arabic: 'السلام عليكم', indo: 'Assalamualaikum', latin: 'As-salamu alaikum', emoji: '👋', category: 'salam' },
+                { arabic: 'صباح الخير', indo: 'Selamat pagi', latin: 'Sabah al-khair', emoji: '🌅', category: 'salam' },
+                { arabic: 'مساء الخير', indo: 'Selamat sore', latin: 'Masa al-khair', emoji: '🌆', category: 'salam' },
+                { arabic: 'شكرا', indo: 'Terima kasih', latin: 'Syukran', emoji: '🙏', category: 'salam' },
+                { arabic: 'عفوا', indo: 'Sama-sama', latin: 'Afwan', emoji: '😊', category: 'salam' },
+                { arabic: 'مع السلامة', indo: 'Selamat tinggal', latin: 'Ma\'a salama', emoji: '👋', category: 'salam' }
+            ],
+            keluarga: [
+                { arabic: 'أب', indo: 'Ayah', latin: 'Ab', emoji: '👨', category: 'keluarga' },
+                { arabic: 'أم', indo: 'Ibu', latin: 'Umm', emoji: '👩', category: 'keluarga' },
+                { arabic: 'أخ', indo: 'Saudara laki-laki', latin: 'Akh', emoji: '👦', category: 'keluarga' },
+                { arabic: 'أخت', indo: 'Saudara perempuan', latin: 'Ukht', emoji: '👧', category: 'keluarga' },
+                { arabic: 'جد', indo: 'Kakek', latin: 'Jadd', emoji: '👴', category: 'keluarga' },
+                { arabic: 'جدة', indo: 'Nenek', latin: 'Jaddah', emoji: '👵', category: 'keluarga' }
+            ],
+            makanan: [
+                { arabic: 'ماء', indo: 'Air', latin: 'Maa', emoji: '💧', category: 'makanan' },
+                { arabic: 'خبز', indo: 'Roti', latin: 'Khubz', emoji: '🍞', category: 'makanan' },
+                { arabic: 'حليب', indo: 'Susu', latin: 'Halib', emoji: '🥛', category: 'makanan' },
+                { arabic: 'فاكهة', indo: 'Buah', latin: 'Fakihah', emoji: '🍎', category: 'makanan' },
+                { arabic: 'أرز', indo: 'Nasi', latin: 'Aruzz', emoji: '🍚', category: 'makanan' },
+                { arabic: 'سمك', indo: 'Ikan', latin: 'Samak', emoji: '🐟', category: 'makanan' }
+            ],
+            aktivitas: [
+                { arabic: 'قراءة', indo: 'Membaca', latin: 'Qiraah', emoji: '📖', category: 'aktivitas' },
+                { arabic: 'كتابة', indo: 'Menulis', latin: 'Kitabah', emoji: '✍️', category: 'aktivitas' },
+                { arabic: 'لعب', indo: 'Bermain', latin: 'Laib', emoji: '⚽', category: 'aktivitas' },
+                { arabic: 'نوم', indo: 'Tidur', latin: 'Naum', emoji: '😴', category: 'aktivitas' },
+                { arabic: 'أكل', indo: 'Makan', latin: 'Akala', emoji: '🍽️', category: 'aktivitas' },
+                { arabic: 'شرب', indo: 'Minum', latin: 'Syariba', emoji: '🥤', category: 'aktivitas' }
+            ],
+            angka: [
+                { arabic: 'واحد', indo: 'Satu', latin: 'Wahid', emoji: '1️⃣', category: 'angka' },
+                { arabic: 'اثنان', indo: 'Dua', latin: 'Ithnan', emoji: '2️⃣', category: 'angka' },
+                { arabic: 'ثلاثة', indo: 'Tiga', latin: 'Thalathah', emoji: '3️⃣', category: 'angka' },
+                { arabic: 'أربعة', indo: 'Empat', latin: 'Arba\'ah', emoji: '4️⃣', category: 'angka' },
+                { arabic: 'خمسة', indo: 'Lima', latin: 'Khamsah', emoji: '5️⃣', category: 'angka' },
+                { arabic: 'عشرة', indo: 'Sepuluh', latin: '\'Asyarah', emoji: '🔟', category: 'angka' }
+            ],
+            warna: [
+                { arabic: 'أحمر', indo: 'Merah', latin: 'Ahmar', emoji: '🔴', category: 'warna' },
+                { arabic: 'أزرق', indo: 'Biru', latin: 'Azraq', emoji: '🔵', category: 'warna' },
+                { arabic: 'أخضر', indo: 'Hijau', latin: 'Akhdar', emoji: '🟢', category: 'warna' },
+                { arabic: 'أصفر', indo: 'Kuning', latin: 'Asfar', emoji: '🟡', category: 'warna' },
+                { arabic: 'أبيض', indo: 'Putih', latin: 'Abyad', emoji: '⚪', category: 'warna' },
+                { arabic: 'أسود', indo: 'Hitam', latin: 'Aswad', emoji: '⚫', category: 'warna' }
+            ]
+        };
+
+        const conversations = {
+            pasar: [
+                { speaker: 'user', text: 'السلام عليكم', indo: 'Assalamualaikum', emoji: '👋' },
+                { speaker: 'assistant', text: 'وعليكم السلام', indo: 'Wa\'alaikumsalam', emoji: '🙏' },
+                { speaker: 'user', text: 'كم السعر؟', indo: 'Berapa harganya?', emoji: '💰' },
+                { speaker: 'assistant', text: 'عشرة ريال', indo: 'Sepuluh riyal', emoji: '💵' },
+                { speaker: 'user', text: 'شكرا جزيلا', indo: 'Terima kasih banyak', emoji: '🙏' },
+                { speaker: 'assistant', text: 'عفوا', indo: 'Sama-sama', emoji: '😊' }
+            ],
+            restoran: [
+                { speaker: 'user', text: 'أريد طعاما', indo: 'Saya ingin makanan', emoji: '🍽️' },
+                { speaker: 'assistant', text: 'ماذا تريد؟', indo: 'Apa yang Anda inginkan?', emoji: '🤔' },
+                { speaker: 'user', text: 'أريد أرزا', indo: 'Saya ingin nasi', emoji: '🍚' },
+                { speaker: 'assistant', text: 'حسنا، تفضل', indo: 'Baik, silakan', emoji: '✨' }
+            ],
+            perkenalan: [
+                { speaker: 'user', text: 'ما اسمك؟', indo: 'Siapa namamu?', emoji: '❓' },
+                { speaker: 'assistant', text: 'اسمي أحمد', indo: 'Namaku Ahmad', emoji: '👤' },
+                { speaker: 'user', text: 'من أين أنت؟', indo: 'Dari mana kamu?', emoji: '🌍' },
+                { speaker: 'assistant', text: 'أنا من إندونيسيا', indo: 'Saya dari Indonesia', emoji: '🇮🇩' }
+            ],
+            rumah: [
+                { speaker: 'user', text: 'أين البيت؟', indo: 'Di mana rumahnya?', emoji: '🏠' },
+                { speaker: 'assistant', text: 'البيت هنا', indo: 'Rumahnya di sini', emoji: '👉' },
+                { speaker: 'user', text: 'هل هذا جميل؟', indo: 'Apakah ini bagus?', emoji: '😊' },
+                { speaker: 'assistant', text: 'نعم، جميل جدا', indo: 'Ya, sangat bagus', emoji: '⭐' }
+            ],
+            sekolah: [
+                { speaker: 'user', text: 'أين المدرسة؟', indo: 'Di mana sekolahnya?', emoji: '🏫' },
+                { speaker: 'assistant', text: 'المدرسة قريبة', indo: 'Sekolahnya dekat', emoji: '🚶' },
+                { speaker: 'user', text: 'ماذا تدرس؟', indo: 'Apa yang kamu pelajari?', emoji: '📚' },
+                { speaker: 'assistant', text: 'أدرس اللغة العربية', indo: 'Saya belajar bahasa Arab', emoji: '✨' }
+            ]
+        };
+
+        const translationDict = {
+            'selamat pagi': 'صباح الخير',
+            'selamat sore': 'مساء الخير',
+            'terima kasih': 'شكرا',
+            'salam': 'السلام عليكم',
+            'ayah': 'أب',
+            'ibu': 'أم',
+            'air': 'ماء',
+            'roti': 'خبز',
+            'apa kabar': 'كيف حالك',
+            'saya baik': 'أنا بخير',
+            'satu': 'واحد',
+            'dua': 'اثنان',
+            'tiga': 'ثلاثة',
+            'merah': 'أحمر',
+            'biru': 'أزرق'
+        };
+
+        const achievements = [
+            { id: 'first_word', name: 'Kata Pertama', desc: 'Pelajari 1 kata', emoji: '🌟', unlocked: false },
+            { id: 'word_master', name: 'Master Kosakata', desc: 'Pelajari 50 kata', emoji: '📚', unlocked: false },
+            { id: 'quiz_beginner', name: 'Pemula Kuis', desc: 'Selesaikan 1 kuis', emoji: '🎯', unlocked: false },
+            { id: 'quiz_expert', name: 'Ahli Kuis', desc: 'Selesaikan 10 kuis', emoji: '🏆', unlocked: false },
+            { id: 'perfect_score', name: 'Nilai Sempurna', desc: 'Dapatkan 100% di kuis', emoji: '💯', unlocked: false },
+            { id: 'daily_streak', name: 'Konsisten', desc: 'Belajar 7 hari berturut', emoji: '🔥', unlocked: false }
+        ];
+
+        let currentCategory = 'all';
+        let quizScore = 0;
+        let currentQuizIndex = 0;
+        let quizQuestions = [];
+        let recognition;
+        let currentTranslation = '';
+        let favoriteTranslations = [];
+        let userStats = {
+            wordsLearned: 0,
+            quizzesTaken: 0,
+            totalScore: 0,
+            clickedWords: new Set()
+        };
+
+        // Sound effects
+        function playSound(type) {
+            const sound = document.getElementById(type + 'Sound');
+            if (sound) {
+                sound.currentTime = 0;
+                sound.play().catch(e => console.log('Sound play failed:', e));
+            }
+        }
+
+        function showTab(tabName) {
+            playSound('click');
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function renderVocabulary() {
+            const grid = document.getElementById('vocabGrid');
+            grid.innerHTML = '';
+            
+            let vocabToShow = [];
+            if (currentCategory === 'all') {
+                Object.values(vocabularyData).forEach(cat => vocabToShow.push(...cat));
+            } else {
+                vocabToShow = vocabularyData[currentCategory] || [];
+            }
+
+            vocabToShow.forEach((vocab, index) => {
+                const card = document.createElement('div');
+                card.className = 'vocab-card';
+                card.style.animationDelay = (index * 0.1) + 's';
+                card.innerHTML = `
+                    <span class="vocab-emoji">${vocab.emoji}</span>
+                    <div class="vocab-arabic">${vocab.arabic}</div>
+                    <div class="vocab-indo">${vocab.indo}</div>
+                    <div class="vocab-latin">${vocab.latin}</div>
+                `;
+                card.onclick = () => {
+                    playSound('click');
+                    speakArabic(vocab.arabic);
+                    if (!userStats.clickedWords.has(vocab.arabic)) {
+                        userStats.clickedWords.add(vocab.arabic);
+                        userStats.wordsLearned++;
+                        updateStats();
+                    }
+                };
+                grid.appendChild(card);
+            });
+        }
+
+        function filterCategory(category) {
+            playSound('click');
+            currentCategory = category;
+            document.querySelectorAll('.category-badge').forEach(badge => {
+                badge.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            renderVocabulary();
+        }
+
+        function speakArabic(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ar-SA';
+            utterance.rate = 0.7;
+            utterance.pitch = 1.1;
+            speechSynthesis.speak(utterance);
+        }
+
+        function loadConversation(type) {
+            playSound('click');
+            const box = document.getElementById('conversationBox');
+            const conv = conversations[type];
+            box.innerHTML = '';
+            
+            conv.forEach((msg, index) => {
+                setTimeout(() => {
+                    const msgDiv = document.createElement('div');
+                    msgDiv.className = `message ${msg.speaker}`;
+                    msgDiv.innerHTML = `
+                        <span style="font-size: 2em;">${msg.emoji}</span>
+                        <div style="font-size: 1.5em; font-weight: 700; margin: 8px 0;">${msg.text}</div>
+                        <div style="font-size: 1.1em; opacity: 0.9;">${msg.indo}</div>
+                    `;
+                    msgDiv.onclick = () => {
+                        playSound('click');
+                        speakArabic(msg.text);
+                    };
+                    box.appendChild(msgDiv);
+                    box.scrollTop = box.scrollHeight;
+                }, index * 600);
+            });
+        }
+
+        function speakConversation() {
+            playSound('click');
+            const box = document.getElementById('conversationBox');
+            const messages = box.querySelectorAll('.message');
+            messages.forEach((msg, index) => {
+                setTimeout(() => {
+                    const arabicText = msg.querySelectorAll('div')[0].textContent;
+                    speakArabic(arabicText);
+                }, index * 3500);
+            });
+        }
+
+        function clearConversation() {
+            playSound('click');
+            document.getElementById('conversationBox').innerHTML = '<p style="text-align: center; color: #999; font-size: 1.3em;">Pilih situasi percakapan di atas! 💕</p>';
+        }
+
+        function speakSelectedText() {
+            playSound('click');
+            const select = document.getElementById('practiceSelect');
+            speakArabic(select.value);
+        }
+
+        function startRecording() {
+            playSound('click');
+            if (!('webkitSpeechRecognition' in window)) {
+                alert('Browser Anda tidak mendukung speech recognition. Gunakan Chrome! 🌟');
+                return;
+            }
+
+            recognition = new webkitSpeechRecognition();
+            recognition.lang = 'ar-SA';
+            recognition.continuous = false;
+
+            const btn = document.getElementById('recordBtn');
+            btn.innerHTML = '⏺️ Merekam...<span class="recording-indicator"></span>';
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                const selected = document.getElementById('practiceSelect');
+                const resultDiv = document.getElementById('recordingResult');
+                
+                playSound('success');
+                
+                resultDiv.innerHTML = `
+                    <div class="card" style="background: linear-gradient(135deg, #fff5fb 0%, #ffe9f5 100%); border: 4px solid #ff1493;">
+                        <h3 style="color: #ff1493; text-align: center; font-size: 2em;">📊 Hasil Rekaman</h3>
+                        <div style="font-size: 1.5em; text-align: center; margin: 20px 0;">
+                            <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 15px;">
+                                <strong style="color: #ff1493;">Target:</strong><br>${selected.value}
+                            </div>
+                            <div style="margin: 15px 0; padding: 15px; background: white; border-radius: 15px;">
+                                <strong style="color: #ff1493;">Ucapan Kamu:</strong><br>${transcript}
+                            </div>
+                            <div style="font-size: 4em; margin: 25px 0; animation: bounceSlow 2s infinite;">
+                                ${transcript.includes(selected.value.substring(0, 3)) ? '✅ Sempurna!' : '💪 Coba Lagi!'}
+                            </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <button class="btn" onclick="speakSelectedText()">🔊 Dengar Lagi</button>
+                            <button class="btn" onclick="startRecording()">🎤 Rekam Ulang</button>
+                        </div>
+                    </div>
+                `;
+            };
+
+            recognition.onerror = function() {
+                btn.innerHTML = '🎤 Mulai Rekam';
+                alert('Terjadi kesalahan. Pastikan microphone aktif! 🎤');
+            };
+
+            recognition.onend = function() {
+                btn.innerHTML = '🎤 Mulai Rekam';
+            };
+
+            recognition.start();
+        }
+
+        function startQuiz(mode = 'normal') {
+            playSound('click');
+            quizScore = 0;
+            currentQuizIndex = 0;
+            
+            let allVocab = [];
+            Object.values(vocabularyData).forEach(cat => allVocab.push(...cat));
+            
+            const questionCount = mode === 'hard' ? 10 : 5;
+            quizQuestions = allVocab.sort(() => Math.random() - 0.5).slice(0, questionCount);
+            
+            document.getElementById('score').textContent = '0';
+            document.getElementById('totalQuestions').textContent = quizQuestions.length;
+            
+            showQuizQuestion();
+        }
+
+        function showQuizQuestion() {
+            if (currentQuizIndex >= quizQuestions.length) {
+                showQuizResult();
+                return;
+            }
+
+            const question = quizQuestions[currentQuizIndex];
+            const content = document.getElementById('quizContent');
+            
+            let allVocab = [];
+            Object.values(vocabularyData).forEach(cat => allVocab.push(...cat));
+            
+            const wrongOptions = allVocab
+                .filter(v => v.indo !== question.indo)
+                .sort(() => Math.random() - 0.5)
+                .slice(0, 3);
+            
+            const options = [...wrongOptions, question].sort(() => Math.random() - 0.5);
+            
+            content.innerHTML = `
+                <div style="text-align: center; margin: 35px 0;">
+                    <div style="font-size: 6em; margin-bottom: 25px; animation: floatSlow 4s ease-in-out infinite;">${question.emoji}</div>
+                    <div style="font-size: 3em; color: #ff1493; font-weight: 800; margin: 25px 0;">
+                        ${question.arabic}
+                    </div>
+                    <button class="btn" onclick="speakArabic('${question.arabic}')">🔊 Dengarkan</button>
+                </div>
+                <h3 style="color: #ff1493; text-align: center; margin: 25px 0; font-size: 1.8em;">Apa artinya dalam Bahasa Indonesia? 🤔</h3>
+                ${options.map((opt, i) => `
+                    <div class="quiz-option" onclick="checkAnswer('${opt.indo}', '${question.indo}', this)">
+                        ${opt.emoji} ${opt.indo}
+                    </div>
+                `).join('')}
+            `;
+            
+            updateProgress();
+        }
+
+        function checkAnswer(selected, correct, element) {
+            playSound('click');
+            const allOptions = document.querySelectorAll('.quiz-option');
+            allOptions.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                if (opt.textContent.includes(correct)) {
+                    opt.classList.add('correct');
+                }
+            });
+            
+            if (selected === correct) {
+                element.classList.add('correct');
+                playSound('success');
+                quizScore++;
+                userStats.totalScore += 10;
+                document.getElementById('score').textContent = quizScore;
+            } else {
+                element.classList.add('wrong');
+            }
+            
+            setTimeout(() => {
+                currentQuizIndex++;
+                showQuizQuestion();
+            }, 2500);
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuizIndex + 1) / quizQuestions.length) * 100;
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = Math.round(progress) + '%';
+        }
+
+        function showQuizResult() {
+            const content = document.getElementById('quizContent');
+            const percentage = (quizScore / quizQuestions.length) * 100;
+            let emoji = '🌟';
+            let message = 'Bagus!';
+            
+            if (percentage >= 80) {
+                emoji = '🏆';
+                message = 'Luar Biasa! Sempurna!';
+                playSound('success');
+            } else if (percentage >= 60) {
+                emoji = '⭐';
+                message = 'Hebat Sekali!';
+            } else if (percentage >= 40) {
+                emoji = '💪';
+                message = 'Terus Semangat!';
+            } else {
+                emoji = '📚';
+                message = 'Ayo Belajar Lagi!';
+            }
+            
+            userStats.quizzesTaken++;
+            updateStats();
+            
+            content.innerHTML = `
+                <div style="text-align: center; padding: 50px;">
+                    <div style="font-size: 8em; animation: bounceSlow 2s infinite;">${emoji}</div>
+                    <h2 style="color: #ff1493; font-size: 3em; margin: 25px 0; font-weight: 800;">${message}</h2>
+                    <div style="font-size: 1.8em; color: #666; font-weight: 600;">
+                        Skor Akhir: ${quizScore} dari ${quizQuestions.length} 
+                        <br>(${Math.round(percentage)}%)
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <button class="btn" onclick="startQuiz()">🔄 Kuis Lagi</button>
+                        <button class="btn" onclick="showTab('kosakata')">📚 Belajar Lagi</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function translateText() {
+            playSound('click');
+            const input = document.getElementById('translateInput').value.toLowerCase().trim();
+            const resultDiv = document.getElementById('translationResult');
+            
+            if (!input) {
+                resultDiv.innerHTML = `
+                    <div class="card" style="background: linear-gradient(135deg, #ffc8c8 0%, #ffa0a0 100%); text-align: center; border: 4px solid #ff3366;">
+                        <span style="font-size: 4em; animation: wiggle 1s infinite;">⚠️</span>
+                        <p style="font-size: 1.4em; margin-top: 15px; font-weight: 600;">Masukkan kata atau frasa dulu ya! 😊</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let translation = translationDict[input];
+            
+            if (!translation) {
+                let allVocab = [];
+                Object.values(vocabularyData).forEach(cat => allVocab.push(...cat));
+                const found = allVocab.find(v => v.indo.toLowerCase() === input);
+                translation = found ? found.arabic : null;
+            }
+            
+            if (translation) {
+                currentTranslation = translation;
+                playSound('success');
+                resultDiv.innerHTML = `
+                    <div class="card" style="background: linear-gradient(135deg, #c8ffc8 0%, #a0ffa0 100%); text-align: center; border: 4px solid #00ff88;">
+                        <span style="font-size: 4em; animation: bounceSlow 2s infinite;">✅</span>
+                        <div style="font-size: 3em; color: #00aa44; font-weight: 800; margin: 25px 0; direction: rtl;">
+                            ${translation}
+                        </div>
+                        <p style="font-size: 1.5em; color: #666; font-weight: 600;">Terjemahan dari: "${input}"</p>
+                    </div>
+                `;
+            } else {
+                currentTranslation = '';
+                resultDiv.innerHTML = `
+                    <div class="card" style="background: linear-gradient(135deg, #ffe9c8 0%, #ffd9a0 100%); text-align: center; border: 4px solid #ffaa00;">
+                        <span style="font-size: 4em; animation: floatSlow 3s ease-in-out infinite;">🔍</span>
+                        <p style="font-size: 1.4em; margin-top: 15px; color: #666; font-weight: 600;">
+                            Maaf, kata "${input}" belum ada dalam database. 
+                            <br>Coba kata lain ya! 💕
+                        </p>
+                    </div>
+                `;
+            }
+        }
+
+        function speakTranslation() {
+            playSound('click');
+            if (currentTranslation) {
+                speakArabic(currentTranslation);
+            } else {
+                alert('Terjemahkan kata dulu ya! 🌸');
+            }
+        }
+
+        function saveToFavorite() {
+            playSound('click');
+            const input = document.getElementById('translateInput').value.toLowerCase().trim();
+            if (currentTranslation && input) {
+                const existing = favoriteTranslations.find(f => f.indo === input);
+                if (!existing) {
+                    favoriteTranslations.push({ indo: input, arabic: currentTranslation });
+                    renderFavorites();
+                    alert('✨ Berhasil disimpan ke favorit! 💖');
+                } else {
+                    alert('⚠️ Sudah ada di favorit!');
+                }
+            } else {
+                alert('Terjemahkan kata dulu sebelum menyimpan! 🌸');
+            }
+        }
+
+        function renderFavorites() {
+            const list = document.getElementById('favoriteList');
+            if (favoriteTranslations.length === 0) {
+                list.innerHTML = '<p style="text-align: center; color: #999; font-size: 1.2em;">Belum ada favorit. Simpan terjemahan favoritmu! 💕</p>';
+                return;
+            }
+            
+            list.innerHTML = favoriteTranslations.map((fav, index) => `
+                <div style="background: linear-gradient(135deg, #ff69b4 0%, #ff85c1 100%); padding: 20px; border-radius: 20px; display: flex; justify-content: space-between; align-items: center; border: 3px solid #ff1493; cursor: pointer;" onclick="speakArabic('${fav.arabic}')">
+                    <div style="color: white;">
+                        <div style="font-size: 1.3em; font-weight: 700;">${fav.indo}</div>
+                        <div style="font-size: 1.5em; direction: rtl; margin-top: 5px;">${fav.arabic}</div>
+                    </div>
+                    <button class="btn" style="padding: 10px 20px; font-size: 1em;" onclick="event.stopPropagation(); removeFavorite(${index})">🗑️</button>
+                </div>
+            `).join('');
+        }
+
+        function removeFavorite(index) {
+            playSound('click');
+            favoriteTranslations.splice(index, 1);
+            renderFavorites();
+        }
+
+        function startGame(gameType) {
+            playSound('click');
+            const gameArea = document.getElementById('gameArea');
+            
+            if (gameType === 'memory') {
+                gameArea.innerHTML = `
+                    <div class="card">
+                        <h3 style="color: #ff1493; font-size: 2em; text-align: center; margin-bottom: 20px;">🧠 Memory Match Game</h3>
+                        <p style="text-align: center; font-size: 1.2em; color: #666; margin-bottom: 20px;">Cocokkan kartu bahasa Arab dengan terjemahannya!</p>
+                        <div style="text-align: center; font-size: 2em; color: #ff1493; font-weight: 700; margin: 20px 0;" id="memoryScore">Langkah: 0 | Cocok: 0/6</div>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;" id="memoryCards"></div>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <button class="btn" onclick="startGame('memory')">🔄 Main Lagi</button>
+                        </div>
+                    </div>
+                `;
+                initMemoryGame();
+            } else if (gameType === 'listening') {
+                gameArea.innerHTML = `
+                    <div class="card">
+                        <h3 style="color: #ff1493; font-size: 2em; text-align: center; margin-bottom: 20px;">👂 Listening Challenge</h3>
+                        <p style="text-align: center; font-size: 1.2em; color: #666;">Dengarkan audio dan pilih jawaban yang benar!</p>
+                        <div style="text-align: center; margin: 30px 0;">
+                            <div style="font-size: 5em; margin: 20px 0; animation: bounceSlow 3s infinite;">🔊</div>
+                            <button class="btn" onclick="playListeningQuestion()" style="font-size: 1.5em; padding: 20px 50px;">🎧 Putar Audio</button>
+                        </div>
+                        <div id="listeningOptions"></div>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <button class="btn" onclick="startGame('listening')">🔄 Soal Baru</button>
+                        </div>
+                    </div>
+                `;
+                initListeningGame();
+            } else {
+                gameArea.innerHTML = `
+                    <div class="card" style="text-align: center; padding: 50px;">
+                        <div style="font-size: 5em; margin-bottom: 20px;">🎮</div>
+                        <h3 style="color: #ff1493; font-size: 2em;">Game ini sedang dikembangkan! 🚧</h3>
+                        <p style="font-size: 1.3em; color: #666; margin-top: 15px;">Tunggu update selanjutnya ya! 💕</p>
+                    </div>
+                `;
+            }
+        }
+
+        let memoryCards = [];
+        let flippedCards = [];
+        let matchedPairs = 0;
+        let moves = 0;
+
+        function initMemoryGame() {
+            let allVocab = [];
+            Object.values(vocabularyData).forEach(cat => allVocab.push(...cat));
+            const selected = allVocab.sort(() => Math.random() - 0.5).slice(0, 6);
+            
+            memoryCards = [];
+            selected.forEach(vocab => {
+                memoryCards.push({ type: 'arabic', text: vocab.arabic, id: vocab.indo });
+                memoryCards.push({ type: 'indo', text: vocab.indo, id: vocab.indo });
+            });
+            
+            memoryCards = memoryCards.sort(() => Math.random() - 0.5);
+            flippedCards = [];
+            matchedPairs = 0;
+            moves = 0;
+            
+            renderMemoryCards();
+        }
+
+        function renderMemoryCards() {
+            const container = document.getElementById('memoryCards');
+            container.innerHTML = memoryCards.map((card, index) => `
+                <div class="vocab-card" id="memCard${index}" onclick="flipMemoryCard(${index})" style="cursor: pointer; min-height: 150px; display: flex; align-items: center; justify-content: center;">
+                    <div style="font-size: 2em; font-weight: 700;">❓</div>
+                </div>
+            `).join('');
+        }
+
+        function flipMemoryCard(index) {
+            playSound('click');
+            if (flippedCards.length >= 2 || flippedCards.includes(index)) return;
+            
+            const card = document.getElementById('memCard' + index);
+            const cardData = memoryCards[index];
+            
+            card.innerHTML = `<div style="font-size: ${cardData.type === 'arabic' ? '2em' : '1.3em'}; font-weight: 700; ${cardData.type === 'arabic' ? 'direction: rtl;' : ''}">${cardData.text}</div>`;
+            flippedCards.push(index);
+            
+            if (flippedCards.length === 2) {
+                moves++;
+                setTimeout(checkMemoryMatch, 1000);
+            }
+        }
+
+        function checkMemoryMatch() {
+            const [index1, index2] = flippedCards;
+            const card1 = memoryCards[index1];
+            const card2 = memoryCards[index2];
+            
+            if (card1.id === card2.id) {
+                playSound('success');
+                matchedPairs++;
+                document.getElementById('memCard' + index1).style.opacity = '0.5';
+                document.getElementById('memCard' + index2).style.opacity = '0.5';
+                document.getElementById('memCard' + index1).style.pointerEvents = 'none';
+                document.getElementById('memCard' + index2).style.pointerEvents = 'none';
+                
+                if (matchedPairs === 6) {
+                    setTimeout(() => {
+                        alert(`🎉 Selamat! Kamu menyelesaikan game dalam ${moves} langkah! 🏆`);
+                    }, 500);
+                }
+            } else {
+                document.getElementById('memCard' + index1).innerHTML = '<div style="font-size: 2em; font-weight: 700;">❓</div>';
+                document.getElementById('memCard' + index2).innerHTML = '<div style="font-size: 2em; font-weight: 700;">❓</div>';
+            }
+            
+            flippedCards = [];
+            document.getElementById('memoryScore').textContent = `Langkah: ${moves} | Cocok: ${matchedPairs}/6`;
+        }
+
+        let currentListeningQuestion = null;
+
+        function initListeningGame() {
+            let allVocab = [];
+            Object.values(vocabularyData).forEach(cat => allVocab.push(...cat));
+            currentListeningQuestion = allVocab[Math.floor(Math.random() * allVocab.length)];
+            
+            const wrongOptions = allVocab
+                .filter(v => v.indo !== currentListeningQuestion.indo)
+                .sort(() => Math.random() - 0.5)
+                .slice(0, 3);
+            
+            const options = [...wrongOptions, currentListeningQuestion].sort(() => Math.random() - 0.5);
+            
+            const container = document.getElementById('listeningOptions');
+            container.innerHTML = options.map(opt => `
+                <div class="quiz-option" onclick="checkListeningAnswer('${opt.indo}')">
+                    ${opt.emoji} ${opt.indo}
+                </div>
+            `).join('');
+        }
+
+        function playListeningQuestion() {
+            playSound('click');
+            if (currentListeningQuestion) {
+                speakArabic(currentListeningQuestion.arabic);
+            }
+        }
+
+        function checkListeningAnswer(selected) {
+            playSound('click');
+            if (selected === currentListeningQuestion.indo) {
+                playSound('success');
+                alert('✅ Benar! Hebat! 🎉');
+                startGame('listening');
+            } else {
+                alert('❌ Salah! Coba dengarkan lagi! 💪');
+            }
+        }
+
+        function renderBadges() {
+            const container = document.getElementById('badgeContainer');
+            container.innerHTML = achievements.map(badge => `
+                <div class="achievement-badge ${badge.unlocked ? '' : 'style="filter: grayscale(100%); opacity: 0.5;"'}">
+                    <div style="font-size: 3.5em; margin-bottom: 10px;">${badge.emoji}</div>
+                    <div style="font-weight: 700; font-size: 1.2em; color: ${badge.unlocked ? '#ff1493' : '#999'};">${badge.name}</div>
+                    <div style="font-size: 0.9em; color: #666; margin-top: 5px;">${badge.desc}</div>
+                    ${badge.unlocked ? '<div style="margin-top: 10px; font-size: 1.5em;">🎉</div>' : ''}
+                </div>
+            `).join('');
+        }
+
+        function updateStats() {
+            document.getElementById('totalWords').textContent = userStats.wordsLearned;
+            document.getElementById('quizzesTaken').textContent = userStats.quizzesTaken;
+            document.getElementById('totalScore').textContent = userStats.totalScore;
+            
+            // Check achievements
+            if (userStats.wordsLearned >= 1 && !achievements[0].unlocked) {
+                achievements[0].unlocked = true;
+                showAchievementNotif(achievements[0]);
+            }
+            if (userStats.quizzesTaken >= 1 && !achievements[2].unlocked) {
+                achievements[2].unlocked = true;
+                showAchievementNotif(achievements[2]);
+            }
+            
+            renderBadges();
+        }
+
+        function showAchievementNotif(achievement) {
+            playSound('success');
+            const notif = document.createElement('div');
+            notif.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+                padding: 25px;
+                border-radius: 20px;
+                border: 4px solid #ffa500;
+                z-index: 10000;
+                animation: slideInRight 0.5s;
+                box-shadow: 0 10px 40px rgba(255, 215, 0, 0.6);
+            `;
+            notif.innerHTML = `
+                <div style="text-align: center;">
+                    <div style="font-size: 3em;">${achievement.emoji}</div>
+                    <div style="font-size: 1.3em; font-weight: 700; color: #ff1493; margin: 10px 0;">Badge Terbuka!</div>
+                    <div style="font-size: 1.1em; font-weight: 600;">${achievement.name}</div>
+                </div>
+            `;
+            document.body.appendChild(notif);
+            setTimeout(() => notif.remove(), 4000);
+        }
+
+        function renderLeaderboard() {
+            const container = document.getElementById('leaderboardList');
+            const leaders = [
+                { name: 'Aisyah 🌸', score: 1250, emoji: '🥇' },
+                { name: 'Fatimah 💕', score: 1100, emoji: '🥈' },
+                { name: 'Khadijah ✨', score: 980, emoji: '🥉' },
+                { name: 'Kamu 💖', score: userStats.totalScore, emoji: '🌟' },
+                { name: 'Zainab 🦋', score: 750, emoji: '⭐' }
+            ];
+            
+            leaders.sort((a, b) => b.score - a.score);
+            
+            container.innerHTML = leaders.map((leader, index) => `
+                <div class="leaderboard-card" style="background: ${index < 3 ? 'linear-gradient(135deg, #ffd700 0%, #ffed4e 100%)' : 'linear-gradient(135deg, #ff69b4 0%, #ff85c1 100%)'}; border-color: ${index < 3 ? '#ffa500' : '#ff1493'};">
+                    <div style="font-size: 3em;">${index < 3 ? leader.emoji : '🌟'}</div>
+                    <div style="flex: 1;">
+                        <div style="font-size: 1.4em; font-weight: 700; color: ${index < 3 ? '#ff6600' : 'white'};">${leader.name}</div>
+                        <div style="font-size: 1.1em; color: ${index < 3 ? '#ff6600' : 'white'}; opacity: 0.9;">${leader.score} poin</div>
+                    </div>
+                    <div style="font-size: 2em; font-weight: 800; color: ${index < 3 ? '#ff6600' : 'white'};">#${index + 1}</div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize
+        renderVocabulary();
+        renderFavorites();
+        renderBadges();
+        renderLeaderboard();
+        updateStats();
+
+        // Create sparkles periodically
+        setInterval(() => {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 3000);
+        }, 5000);
+    </script>
+</body>
+</html>
